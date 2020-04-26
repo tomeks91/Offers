@@ -1,0 +1,24 @@
+{
+  "firstJhippsterApp": {
+    "student": {
+      "home": {
+        "title": "Student",
+        "createLabel": "Dodaj Student",
+        "createOrEditLabel": "Dodaj lub edytuj: Student",
+        "notFound": "No Students found"
+      },
+      "created": "Utworzono nowy obiekt typu Student z identyfikatorem {{ param }}",
+      "updated": "Uaktualniono obiekt typu Student z identyfikatorem {{ param }}",
+      "deleted": "Usunięto obiekt typu Student z identyfikatorem {{ param }}",
+      "delete": {
+        "question": "Czy na pewno chcesz usunąć Student {{ id }}?"
+      },
+      "detail": {
+        "title": "Student"
+      },
+      "name": "Name",
+      "surname": "Surname",
+      "backpack": "Backpack"
+    }
+  }
+}

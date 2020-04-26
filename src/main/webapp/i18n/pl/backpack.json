@@ -1,0 +1,22 @@
+{
+  "firstJhippsterApp": {
+    "backpack": {
+      "home": {
+        "title": "Backpack",
+        "createLabel": "Dodaj Backpack",
+        "createOrEditLabel": "Dodaj lub edytuj: Backpack",
+        "notFound": "No Backpacks found"
+      },
+      "created": "Utworzono nowy obiekt typu Backpack z identyfikatorem {{ param }}",
+      "updated": "Uaktualniono obiekt typu Backpack z identyfikatorem {{ param }}",
+      "deleted": "Usunięto obiekt typu Backpack z identyfikatorem {{ param }}",
+      "delete": {
+        "question": "Czy na pewno chcesz usunąć Backpack {{ id }}?"
+      },
+      "detail": {
+        "title": "Backpack"
+      },
+      "mark": "Mark"
+    }
+  }
+}

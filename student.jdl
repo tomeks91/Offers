@@ -1,0 +1,12 @@
+entity Student {
+	name String,
+    surname String
+}
+
+entity Backpack {
+	mark String
+}
+
+relationship OneToOne {
+	Student{backpack} to Backpack
+}
