@@ -1,0 +1,76 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="firstJhippsterApp.offerVersion.home.title">Offer Versions</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-offer-version" [routerLink]="['/offer-version/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="firstJhippsterApp.offerVersion.home.createLabel">
+            Create a new Offer Version
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="offerVersions?.length === 0">
+        <span jhiTranslate="firstJhippsterApp.offerVersion.home.notFound">No offerVersions found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="offerVersions?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.read">Read</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.favorite">Favorite</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.available">Available</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.link">Link</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.offer">Offer</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let offerVersion of offerVersions ;trackBy: trackId">
+                    <td><a [routerLink]="['/offer-version', offerVersion.id, 'view']">{{ offerVersion.id }}</a></td>
+                    <td>{{ offerVersion.read }}</td>
+                    <td>{{ offerVersion.favorite }}</td>
+                    <td>{{ offerVersion.available }}</td>
+                    <td><a href="{{ offerVersion.link }}">{{ offerVersion.link }}</a></td>
+                    <td></td>
+                    <td [innerHtml]="offerVersion.description"></td>
+                    <td>
+                        <div *ngIf="offerVersion.offer">
+                            <a [routerLink]="['/offer', offerVersion.offer?.id, 'view']" >{{ offerVersion.offer?.name }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/offer-version', offerVersion.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/offer-version', offerVersion.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(offerVersion)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+{
+    "name": "Offer",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uniqueId",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "offerVersion",
+            "otherEntityRelationshipName": "offer",
+            "relationshipName": "versions"
+        }
+    ],
+    "changelogDate": "20200429161400",
+    "entityTableName": "offer",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

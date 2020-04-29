@@ -1,0 +1,24 @@
+{
+  "firstJhippsterApp": {
+    "offer": {
+      "home": {
+        "title": "Offer",
+        "createLabel": "Dodaj Offer",
+        "createOrEditLabel": "Dodaj lub edytuj: Offer",
+        "notFound": "No Offers found"
+      },
+      "created": "Utworzono nowy obiekt typu Offer z identyfikatorem {{ param }}",
+      "updated": "Uaktualniono obiekt typu Offer z identyfikatorem {{ param }}",
+      "deleted": "Usunięto obiekt typu Offer z identyfikatorem {{ param }}",
+      "delete": {
+        "question": "Czy na pewno chcesz usunąć Offer {{ id }}?"
+      },
+      "detail": {
+        "title": "Offer"
+      },
+      "name": "Name",
+      "uniqueId": "Unique Id",
+      "versions": "Versions"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="firstJhippsterApp.image.home.title">Images</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-image" [routerLink]="['/image/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="firstJhippsterApp.image.home.createLabel">
+            Create a new Image
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="images?.length === 0">
+        <span jhiTranslate="firstJhippsterApp.image.home.notFound">No images found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="images?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.image.image">Image</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.image.offerVersion">Offer Version</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let image of images ;trackBy: trackId">
+                    <td><a [routerLink]="['/image', image.id, 'view']">{{ image.id }}</a></td>
+                    <td>
+                        <a *ngIf="image.image" (click)="openFile(image.imageContentType, image.image)" jhiTranslate="entity.action.open">open</a>
+                        <span *ngIf="image.image">{{ image.imageContentType }}, {{ byteSize(image.image) }}</span>
+                    </td>
+                    <td>
+                        <div *ngIf="image.offerVersion">
+                            <a [routerLink]="['/offer-version', image.offerVersion?.id, 'view']" >{{ image.offerVersion?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/image', image.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/image', image.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(image)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

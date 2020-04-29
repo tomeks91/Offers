@@ -1,0 +1,25 @@
+entity Offer {
+	name String,
+    uniqueId String
+}
+
+entity OfferVersion {
+	read Boolean,
+    favorite Boolean,
+    available Boolean,
+    link String,
+    detailsHtml TextBlob,
+    description TextBlob 
+}
+
+entity Image {
+	image Blob
+}
+
+relationship OneToMany {
+	Offer{versions} to OfferVersion
+}
+
+relationship OneToMany {
+	OfferVersion{images} to Image
+}
