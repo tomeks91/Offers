@@ -31,7 +31,7 @@ public class Image implements Serializable {
     @Column(name = "image_content_type")
     private String imageContentType;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JsonIgnoreProperties("images")
     private OfferVersion offerVersion;
 
@@ -76,11 +76,13 @@ public class Image implements Serializable {
 
     public Image offerVersion(OfferVersion offerVersion) {
         this.offerVersion = offerVersion;
+        offerVersion.getImages().add(this);
         return this;
     }
 
     public void setOfferVersion(OfferVersion offerVersion) {
         this.offerVersion = offerVersion;
+        offerVersion.getImages().add(this);
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

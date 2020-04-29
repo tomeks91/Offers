@@ -8,7 +8,6 @@ import org.hibernate.annotations.Type;
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.util.Objects;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -49,7 +48,7 @@ public class OfferVersion implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "offerVersion")
+    @OneToMany(mappedBy = "offerVersion", fetch = FetchType.EAGER)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Image> images = new HashSet<>();
 

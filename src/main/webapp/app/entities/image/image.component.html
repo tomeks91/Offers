@@ -32,8 +32,7 @@
                 <tr *ngFor="let image of images ;trackBy: trackId">
                     <td><a [routerLink]="['/image', image.id, 'view']">{{ image.id }}</a></td>
                     <td>
-                        <a *ngIf="image.image" (click)="openFile(image.imageContentType, image.image)" jhiTranslate="entity.action.open">open</a>
-                        <span *ngIf="image.image">{{ image.imageContentType }}, {{ byteSize(image.image) }}</span>
+                        <img [src]="'data:' + image.imageContentType + ';base64,' + image.image">
                     </td>
                     <td>
                         <div *ngIf="image.offerVersion">

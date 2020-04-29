@@ -27,6 +27,7 @@
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.favorite">Favorite</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.available">Available</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.link">Link</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.image">Image</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.description">Description</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.offer">Offer</span></th>
                     <th scope="col"></th>
@@ -37,9 +38,11 @@
                     <td><a [routerLink]="['/offer-version', offerVersion.id, 'view']">{{ offerVersion.id }}</a></td>
                     <td>{{ offerVersion.read }}</td>
                     <td>{{ offerVersion.favorite }}</td>
-                    <td>{{ offerVersion.available }}</td>
+                    <td>{{ offerVersion.available}}</td>
                     <td><a href="{{ offerVersion.link }}">{{ offerVersion.link }}</a></td>
-                    <td></td>
+                    <td><div *ngFor="let image of offerVersion.images">
+                    <img [src]="'data:' + image.imageContentType + ';base64,' + image.image" />
+                </div> </td>
                     <td [innerHtml]="offerVersion.description"></td>
                     <td>
                         <div *ngIf="offerVersion.offer">
