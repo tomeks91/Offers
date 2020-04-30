@@ -31,7 +31,7 @@ public class Image implements Serializable {
     @Column(name = "image_content_type")
     private String imageContentType;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JsonIgnoreProperties("images")
     private OfferVersion offerVersion;
 

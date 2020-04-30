@@ -315,7 +315,7 @@
     </dependencies>
 
     <build>
-        <defaultGoal>spring-boot:run</defaultGoal>
+        <defaultGoal>spring-boot:start</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -830,10 +830,7 @@
                     <configuration>
                         <mainClass>${start-class}</mainClass>
                         <fork>true</fork>
-                        <!--
-                        Enable the line below to have remote debugging of your application on port 5005
                         <jvmArguments>-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005</jvmArguments>
-                        -->
                     </configuration>
 
                 </plugin>

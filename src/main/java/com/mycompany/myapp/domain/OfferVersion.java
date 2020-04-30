@@ -1,11 +1,13 @@
 package com.mycompany.myapp.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.*;
 import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -48,7 +50,8 @@ public class OfferVersion implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "offerVersion", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "offerVersion", fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
+    @NotFound(action = NotFoundAction.IGNORE)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Image> images = new HashSet<>();
 
