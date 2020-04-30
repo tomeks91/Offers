@@ -40,7 +40,7 @@ export const offerVersionRoute: Routes = [
     component: OfferVersionComponent,
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'firstJhippsterApp.offerVersion.home.title'
+      pageTitle: 'firstJhippsterApp.offerVersionInteresting.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -52,7 +52,7 @@ export const offerVersionRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'firstJhippsterApp.offerVersion.home.title'
+      pageTitle: 'firstJhippsterApp.offerVersionInteresting.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -64,7 +64,7 @@ export const offerVersionRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'firstJhippsterApp.offerVersion.home.title'
+      pageTitle: 'firstJhippsterApp.offerVersionInteresting.home.title'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -76,7 +76,7 @@ export const offerVersionRoute: Routes = [
     },
     data: {
       authorities: [Authority.USER],
-      pageTitle: 'firstJhippsterApp.offerVersion.home.title'
+      pageTitle: 'firstJhippsterApp.offerVersionInteresting.home.title'
     },
     canActivate: [UserRouteAccessService]
   }

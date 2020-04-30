@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-offer-version-heading" jhiTranslate="firstJhippsterApp.offerVersion.home.createOrEditLabel">Create or edit a Offer Version</h2>
+            <h2 id="jhi-offer-version-heading" jhiTranslate="firstJhippsterApp.offerVersionInteresting.home.createOrEditLabel">Create or edit a Offer Version</h2>
 
             <div>
                 <jhi-alert-error></jhi-alert-error>
@@ -12,47 +12,39 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="firstJhippsterApp.offerVersion.read" for="field_read">Read</label>
+                    <label class="form-control-label" jhiTranslate="firstJhippsterApp.offerVersionInteresting.read" for="field_read">Read</label>
                     <input type="checkbox" class="form-control" name="read" id="field_read"
                            formControlName="read"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="firstJhippsterApp.offerVersion.favorite" for="field_favorite">Favorite</label>
+                    <label class="form-control-label" jhiTranslate="firstJhippsterApp.offerVersionInteresting.favorite" for="field_favorite">Favorite</label>
                     <input type="checkbox" class="form-control" name="favorite" id="field_favorite"
                            formControlName="favorite"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="firstJhippsterApp.offerVersion.available" for="field_available">Available</label>
+                    <label class="form-control-label" jhiTranslate="firstJhippsterApp.offerVersionInteresting.available" for="field_available">Available</label>
                     <input type="checkbox" class="form-control" name="available" id="field_available"
                            formControlName="available"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="firstJhippsterApp.offerVersion.link" for="field_link">Link</label>
+                    <label class="form-control-label" jhiTranslate="firstJhippsterApp.offerVersionInteresting.link" for="field_link">Link</label>
                     <input type="text" class="form-control" name="link" id="field_link"
-                           formControlName="link"/>
+                           formControlName="link" readonly/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="firstJhippsterApp.offerVersion.detailsHtml" for="field_detailsHtml">Details Html</label>
+                    <label class="form-control-label" jhiTranslate="firstJhippsterApp.offerVersionInteresting.detailsHtml" for="field_detailsHtml">Details Html</label>
                     <textarea class="form-control" name="detailsHtml" id="field_detailsHtml"
-                              formControlName="detailsHtml"></textarea>
+                              formControlName="detailsHtml" readonly></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="firstJhippsterApp.offerVersion.description" for="field_description">Description</label>
+                    <label class="form-control-label" jhiTranslate="firstJhippsterApp.offerVersionInteresting.description" for="field_description">Description</label>
                     <textarea class="form-control" name="description" id="field_description"
-                              formControlName="description"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="firstJhippsterApp.offerVersion.offer" for="field_offer">Offer</label>
-                    <select class="form-control" id="field_offer" name="offer" formControlName="offer">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="offerOption.id === editForm.get('offer')!.value?.id ? editForm.get('offer')!.value : offerOption" *ngFor="let offerOption of offers; trackBy: trackById">{{ offerOption.id }}</option>
-                    </select>
+                              formControlName="description" readonly></textarea>
                 </div>
             </div>
 

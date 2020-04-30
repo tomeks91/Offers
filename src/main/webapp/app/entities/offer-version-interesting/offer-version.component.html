@@ -1,6 +1,6 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="firstJhippsterApp.offerVersion.home.title">Offer Versions</span>
+        <span jhiTranslate="firstJhippsterApp.offerVersionInteresting.home.title">Offer Versions</span>
     </h2>
 
     <jhi-alert-error></jhi-alert-error>
@@ -8,7 +8,7 @@
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="offerVersions?.length === 0">
-        <span jhiTranslate="firstJhippsterApp.offerVersion.home.notFound">No offerVersions found</span>
+        <span jhiTranslate="firstJhippsterApp.offerVersionInteresting.home.notFound">No offerVersions found</span>
     </div>
 
     <div class="table-responsive" id="entities" *ngIf="offerVersions?.length > 0">
@@ -16,12 +16,12 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.read">Read</span></th>
-                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.favorite">Favorite</span></th>
-                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.available">Available</span></th>
-                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.image">Image</span></th>
-                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.description">Description</span></th>
-                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersion.offer">Offer</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.read">Read</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.favorite">Favorite</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.available">Available</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.image">Image</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.offer">Offer</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -37,13 +37,13 @@
                     <td [innerHtml]="offerVersion.description"></td>
                     <td>
                         <div *ngIf="offerVersion.offer">
-                            <a [routerLink]="['/offer', offerVersion.offer?.id, 'view']" >{{ offerVersion.offer?.name }}</a>
+                            {{ offerVersion.offer?.name }}
                         </div>
                     </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"
-                                    [routerLink]="['/offer-version', offerVersion.id, 'edit']"
+                                    [routerLink]="['/offer-version-interesting', offerVersion.id, 'edit']"
                                     class="btn btn-primary btn-sm">
                                 <fa-icon icon="pencil-alt"></fa-icon>
                                 <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>

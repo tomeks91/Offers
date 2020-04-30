@@ -1,8 +1,8 @@
 {
   "firstJhippsterApp": {
-    "offerVersion": {
+    "offerVersionInteresting": {
       "home": {
-        "title": "Oferta",
+        "title": "Oferty ulubione",
         "createLabel": "Dodaj Ofertę",
         "createOrEditLabel": "Dodaj lub edytuj: Offer Version",
         "notFound": "No Offer Versions found"
@@ -14,7 +14,7 @@
         "question": "Czy na pewno chcesz usunąć Offer Version {{ id }}?"
       },
       "detail": {
-        "title": "Oferta"
+        "title": "Oferta ulubiona"
       },
       "read": "Przeczytana",
       "favorite": "Ulubiona",
@@ -24,7 +24,7 @@
       "description": "Opis",
       "images": "Obrazki",
       "image": "Obrazek",
-      "offer": "Oferta"
+      "offer": "Oferta ulubiona"
     }
   }
 }

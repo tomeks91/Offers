@@ -1,38 +1,38 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="offerVersion">
-            <h2><span jhiTranslate="firstJhippsterApp.offerVersion.detail.title">Offer Version</span> {{ offerVersion.id }}</h2>
+            <h2><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.detail.title">Offer Version</span> {{ offerVersion.id }}</h2>
 
             <hr>
 
             <jhi-alert-error></jhi-alert-error>
 
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="firstJhippsterApp.offerVersion.read">Read</span></dt>
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.read">Read</span></dt>
                 <dd>
                     <span>{{ offerVersion.read }}</span>
                 </dd>
-                <dt><span jhiTranslate="firstJhippsterApp.offerVersion.favorite">Favorite</span></dt>
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.favorite">Favorite</span></dt>
                 <dd>
                     <span>{{ offerVersion.favorite }}</span>
                 </dd>
-                <dt><span jhiTranslate="firstJhippsterApp.offerVersion.available">Available</span></dt>
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.available">Available</span></dt>
                 <dd>
                     <span>{{ offerVersion.available }}</span>
                 </dd>
-                <dt><span jhiTranslate="firstJhippsterApp.offerVersion.link">Link</span></dt>
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.link">Link</span></dt>
                 <dd>
                     <span>{{ offerVersion.link }}</span>
                 </dd>
-                <dt><span jhiTranslate="firstJhippsterApp.offerVersion.detailsHtml">Details Html</span></dt>
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.detailsHtml">Details Html</span></dt>
                 <dd>
                     <span>{{ offerVersion.detailsHtml }}</span>
                 </dd>
-                <dt><span jhiTranslate="firstJhippsterApp.offerVersion.description">Description</span></dt>
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.description">Description</span></dt>
                 <dd>
                     <span>{{ offerVersion.description }}</span>
                 </dd>
-                <dt><span jhiTranslate="firstJhippsterApp.offerVersion.offer">Offer</span></dt>
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInteresting.offer">Offer</span></dt>
                 <dd>
                     <div *ngIf="offerVersion.offer">
                         <a [routerLink]="['/offer', offerVersion.offer?.id, 'view']">{{ offerVersion.offer?.id }}</a>
