@@ -5,8 +5,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule.forChild([
       {
-        path: 'offer-version',
-        loadChildren: () => import('./offer-version/offer-version.module').then(m => m.FirstJhippsterOfferVersionModule)
+        path: 'offer-version-interesting',
+        loadChildren: () => import('./offer-version-interesting/offer-version.module').then(m => m.FirstJhippsterOfferVersionInterestingModule)
       },
       {
         path: 'offer',

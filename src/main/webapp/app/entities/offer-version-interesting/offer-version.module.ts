@@ -13,4 +13,4 @@ import { offerVersionRoute } from './offer-version.route';
   declarations: [OfferVersionComponent, OfferVersionDetailComponent, OfferVersionUpdateComponent, OfferVersionDeleteDialogComponent],
   entryComponents: [OfferVersionDeleteDialogComponent]
 })
-export class FirstJhippsterOfferVersionModule {}
+export class FirstJhippsterOfferVersionInterestingModule {}
