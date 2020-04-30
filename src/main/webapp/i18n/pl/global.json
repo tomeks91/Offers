@@ -9,8 +9,8 @@
         "main": "Encje",
         "student": "Student",
         "backpack": "Backpack",
-        "offer": "Offer",
-        "offerVersion": "Offer Version",
+        "offer": "Oferta",
+        "offerVersion": "Oferta",
         "image": "Image",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },

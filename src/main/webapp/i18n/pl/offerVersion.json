@@ -2,8 +2,8 @@
   "firstJhippsterApp": {
     "offerVersion": {
       "home": {
-        "title": "Offer Version",
-        "createLabel": "Dodaj Offer Version",
+        "title": "Oferta",
+        "createLabel": "Dodaj Ofertę",
         "createOrEditLabel": "Dodaj lub edytuj: Offer Version",
         "notFound": "No Offer Versions found"
       },
@@ -14,17 +14,17 @@
         "question": "Czy na pewno chcesz usunąć Offer Version {{ id }}?"
       },
       "detail": {
-        "title": "Offer Version"
+        "title": "Oferta"
       },
-      "read": "Read",
-      "favorite": "Favorite",
-      "available": "Available",
+      "read": "Przeczytana",
+      "favorite": "Ulubiona",
+      "available": "Dostępna",
       "link": "Link",
-      "detailsHtml": "Details Html",
-      "description": "Description",
-      "images": "Images",
-      "image": "Image",
-      "offer": "Offer"
+      "detailsHtml": "Szczegóły",
+      "description": "Opis",
+      "images": "Obrazki",
+      "image": "Obrazek",
+      "offer": "Oferta"
     }
   }
 }
