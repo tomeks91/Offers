@@ -115,4 +115,70 @@ public class OfferVersionResource {
         offerVersionRepository.deleteById(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
+
+    /**
+     * {@code GET  /offer-versions} : get all the offerVersions.
+     *
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of offerVersions in body.
+     */
+    @GetMapping("/offer-versions-interesting")
+    public List<OfferVersion> getAllOfferVersionsInteresting() {
+        log.debug("REST request to get all OfferVersions");
+        return offerVersionRepository.findByFavoriteTrueAndAvailableTrue();
+    }
+
+    /**
+     * {@code GET  /offer-versions} : get all the offerVersions.
+     *
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of offerVersions in body.
+     */
+    @GetMapping("/offer-versions-interesting-not-active")
+    public List<OfferVersion> getAllOfferVersionsInterestingNotActive() {
+        log.debug("REST request to get all OfferVersions");
+        return offerVersionRepository.findByFavoriteTrueAndAvailableFalse();
+    }
+
+    /**
+     * {@code GET  /offer-versions} : get all the offerVersions.
+     *
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of offerVersions in body.
+     */
+    @GetMapping("/offer-versions-not-interesting")
+    public List<OfferVersion> getAllOfferVersionsNotInteresting() {
+        log.debug("REST request to get all OfferVersions");
+        return offerVersionRepository.findByFavoriteFalseAndReadTrueAndAvailableTrue();
+    }
+
+    /**
+     * {@code GET  /offer-versions} : get all the offerVersions.
+     *
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of offerVersions in body.
+     */
+    @GetMapping("/offer-versions-not-interesting-not-active")
+    public List<OfferVersion> getAllOfferVersionsNotInterestingNotActive() {
+        log.debug("REST request to get all OfferVersions");
+        return offerVersionRepository.findByFavoriteFalseAndReadTrueAndAvailableFalse();
+    }
+
+    /**
+     * {@code GET  /offer-versions} : get all the offerVersions.
+     *
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of offerVersions in body.
+     */
+    @GetMapping("/offer-versions-not-read")
+    public List<OfferVersion> getAllOfferVersionsNotRead() {
+        log.debug("REST request to get all OfferVersions");
+        return offerVersionRepository.findByFavoriteFalseAndReadFalseAndAvailableTrue();
+    }
+
+    /**
+     * {@code GET  /offer-versions} : get all the offerVersions.
+     *
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of offerVersions in body.
+     */
+    @GetMapping("/offer-versions-not-read-not-active")
+    public List<OfferVersion> getAllOfferVersionsNotReadNotActive() {
+        log.debug("REST request to get all OfferVersions");
+        return offerVersionRepository.findByFavoriteFalseAndReadFalseAndAvailableFalse();
+    }
 }

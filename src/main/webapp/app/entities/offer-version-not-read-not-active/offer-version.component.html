@@ -1,0 +1,57 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.home.title">Offer Versions</span>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="offerVersions?.length === 0">
+        <span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.home.notFound">No offerVersions found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="offerVersions?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.read">Read</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.favorite">Favorite</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.available">Available</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.image">Image</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.offer">Offer</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let offerVersion of offerVersions ;trackBy: trackId">
+                    <td><a [routerLink]="['/offer-version', offerVersion.id, 'view']">{{ offerVersion.id }}</a></td>
+                    <td>{{ offerVersion.read }}</td>
+                    <td>{{ offerVersion.favorite }}</td>
+                    <td>{{ offerVersion.available}}</td>
+                    <td><div *ngFor="let image of offerVersion.images">
+                    <img [src]="'data:' + image.imageContentType + ';base64,' + image.image" />
+                </div> </td>
+                    <td [innerHtml]="offerVersion.description"></td>
+                    <td>
+                        <div *ngIf="offerVersion.offer">
+                            {{ offerVersion.offer?.name }}
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/offer-version-interesting', offerVersion.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

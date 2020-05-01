@@ -29,7 +29,7 @@ export class OfferVersionService {
 
   query(req?: any): Observable<EntityArrayResponseType> {
     const options = createRequestOption(req);
-    return this.http.get<IOfferVersion[]>('api/offer-versions-interesting', { params: options, observe: 'response' });
+    return this.http.get<IOfferVersion[]>('api/offer-versions-not-read-not-active', { params: options, observe: 'response' });
   }
 
   delete(id: number): Observable<HttpResponse<{}>> {

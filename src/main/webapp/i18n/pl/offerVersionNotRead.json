@@ -1,0 +1,30 @@
+{
+  "firstJhippsterApp": {
+    "offerVersionNotRead": {
+      "home": {
+        "title": "Oferty nieprzeczytane",
+        "createLabel": "Dodaj Ofertę",
+        "createOrEditLabel": "Dodaj lub edytuj: Offer Version",
+        "notFound": "No Offer Versions found"
+      },
+      "created": "Utworzono nowy obiekt typu Offer Version z identyfikatorem {{ param }}",
+      "updated": "Uaktualniono obiekt typu Offer Version z identyfikatorem {{ param }}",
+      "deleted": "Usunięto obiekt typu Offer Version z identyfikatorem {{ param }}",
+      "delete": {
+        "question": "Czy na pewno chcesz usunąć Offer Version {{ id }}?"
+      },
+      "detail": {
+        "title": "Oferta nieprzeczytana"
+      },
+      "read": "Przeczytana",
+      "favorite": "Ulubiona",
+      "available": "Dostępna",
+      "link": "Link",
+      "detailsHtml": "Szczegóły",
+      "description": "Opis",
+      "images": "Obrazki",
+      "image": "Obrazek",
+      "offer": "Oferta nieprzeczytana"
+    }
+  }
+}

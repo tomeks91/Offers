@@ -11,6 +11,11 @@
         "backpack": "Backpack",
         "offer": "Oferta",
         "offerVersionInteresting": "Oferty ulubione",
+        "offerVersionInterestingNotActive": "Oferty ulubione nieaktywne",
+        "offerVersionNotRead": "Oferty nieprzeczytane",
+        "offerVersionNotReadNotActive": "Oferty nieprzeczytane nieaktywne",
+        "offerVersionNotInteresting": "Oferty odrzucone",
+        "offerVersionNotInterestingNotActive": "Oferty odrzucone nieaktywne",
         "image": "Image",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },

@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="offerVersion">
+            <h2><span jhiTranslate="firstJhippsterApp.offerVersionInterestingNotActive.detail.title">Offer Version</span> {{ offerVersion.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInterestingNotActive.read">Read</span></dt>
+                <dd>
+                    <span>{{ offerVersion.read }}</span>
+                </dd>
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInterestingNotActive.favorite">Favorite</span></dt>
+                <dd>
+                    <span>{{ offerVersion.favorite }}</span>
+                </dd>
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInterestingNotActive.available">Available</span></dt>
+                <dd>
+                    <span>{{ offerVersion.available }}</span>
+                </dd>
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInterestingNotActive.link">Link</span></dt>
+                <dd>
+                    <span>{{ offerVersion.link }}</span>
+                </dd>
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInterestingNotActive.detailsHtml">Details Html</span></dt>
+                <dd>
+                    <span>{{ offerVersion.detailsHtml }}</span>
+                </dd>
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInterestingNotActive.description">Description</span></dt>
+                <dd>
+                    <span>{{ offerVersion.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="firstJhippsterApp.offerVersionInterestingNotActive.offer">Offer</span></dt>
+                <dd>
+                    <div *ngIf="offerVersion.offer">
+                        <a [routerLink]="['/offer', offerVersion.offer?.id, 'view']">{{ offerVersion.offer?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/offer-version', offerVersion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
