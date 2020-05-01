@@ -3,6 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiDataUtils } from 'ng-jhipster';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
 
 import { IOfferVersion } from 'app/shared/model/offer-version.model';
 import { OfferVersionService } from './offer-version.service';
@@ -58,5 +59,41 @@ export class OfferVersionComponent implements OnInit, OnDestroy {
   delete(offerVersion: IOfferVersion): void {
     const modalRef = this.modalService.open(OfferVersionDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
     modalRef.componentInstance.offerVersion = offerVersion;
+  }
+
+  saveRead(offerVersion: IOfferVersion, read: any): void {
+     offerVersion.read = read;
+     this.save(offerVersion);
+   }
+
+  saveFavorite(offerVersion: IOfferVersion, favorite: any): void {
+      offerVersion.favorite = favorite;
+      this.save(offerVersion);
+  }
+
+   saveAvailable(offerVersion: IOfferVersion, available): void {
+     offerVersion.available = available;
+     this.save(offerVersion);
+   }
+
+  save(offerVersion: IOfferVersion): void {
+      if (offerVersion.id !== undefined) {
+        this.subscribeToSaveResponse(this.offerVersionService.update(offerVersion));
+      }
+  }
+
+  protected subscribeToSaveResponse(result: Observable<HttpResponse<IOfferVersion>>): void {
+      result.subscribe(
+        () => this.onSaveSuccess(),
+        () => this.onSaveError()
+      );
+    }
+
+  protected onSaveSuccess(): void {
+      this.ngOnDestroy();
+      this.ngOnInit();
+  }
+
+  protected onSaveError(): void {
   }
 }
