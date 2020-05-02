@@ -31,6 +31,10 @@ import { RouterModule } from '@angular/router';
       {
         path: 'offer',
         loadChildren: () => import('./offer/offer.module').then(m => m.FirstJhippsterOfferModule)
+      },
+      {
+        path: 'image',
+        loadChildren: () => import('./image/image.module').then(m => m.FirstJhippsterImageModule)
       }
     ])
   ]

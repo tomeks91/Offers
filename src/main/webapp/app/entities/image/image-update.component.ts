@@ -10,7 +10,7 @@ import { IImage, Image } from 'app/shared/model/image.model';
 import { ImageService } from './image.service';
 import { AlertError } from 'app/shared/alert/alert-error.model';
 import { IOfferVersion } from 'app/shared/model/offer-version.model';
-import { OfferVersionService } from 'app/entities/offer-version/offer-version.service';
+import { OfferVersionService } from 'app/entities/offer-version-interesting/offer-version.service';
 
 @Component({
   selector: 'jhi-image-update',
