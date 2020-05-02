@@ -34,8 +34,8 @@
                     </td>
                     <td><input *ngIf="!offerVersion.favorite" type="checkbox" (click)="saveFavorite(offerVersion, $event.target.checked)"/>
                         <input *ngIf="offerVersion.favorite" type="checkbox" checked (click)="saveFavorite(offerVersion, $event.target.checked)" /></td>
-                    <td><input *ngIf="!offerVersion.available" type="checkbox" (click)="saveAvailable(offerVersion, $event.target.checked)"/>
-                        <input *ngIf="offerVersion.available" type="checkbox" checked (click)="saveAvailable(offerVersion, $event.target.checked)"/></td>
+                    <td><input *ngIf="!offerVersion.available" type="checkbox" disabled />
+                        <input *ngIf="offerVersion.available" type="checkbox" checked disabled/></td>
                     <td><div *ngFor="let image of offerVersion.images">
                     <img [src]="'data:' + image.imageContentType + ';base64,' + image.image" />
                 </div> </td>

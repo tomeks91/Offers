@@ -71,7 +71,7 @@ export class OfferVersionComponent implements OnInit, OnDestroy {
       this.save(offerVersion);
   }
 
-   saveAvailable(offerVersion: IOfferVersion, available): void {
+   saveAvailable(offerVersion: IOfferVersion, available: any): void {
      offerVersion.available = available;
      this.save(offerVersion);
    }
