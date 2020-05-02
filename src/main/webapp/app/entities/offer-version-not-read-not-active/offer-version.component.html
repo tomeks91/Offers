@@ -16,9 +16,8 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.read">Read</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.rejected">Rejected</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.favorite">Favorite</span></th>
-                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.available">Available</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.image">Image</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.description">Description</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.offer">Offer</span></th>
@@ -34,8 +33,7 @@
                     </td>
                     <td><input *ngIf="!offerVersion.favorite" type="checkbox" (click)="saveFavorite(offerVersion, $event.target.checked)"/>
                         <input *ngIf="offerVersion.favorite" type="checkbox" checked (click)="saveFavorite(offerVersion, $event.target.checked)" /></td>
-                    <td><input *ngIf="!offerVersion.available" type="checkbox" disabled />
-                        <input *ngIf="offerVersion.available" type="checkbox" checked disabled/></td>
+
                     <td><div *ngFor="let image of offerVersion.images">
                     <img [src]="'data:' + image.imageContentType + ';base64,' + image.image" />
                 </div> </td>

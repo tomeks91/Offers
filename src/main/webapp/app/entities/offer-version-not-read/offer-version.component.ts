@@ -68,6 +68,9 @@ export class OfferVersionComponent implements OnInit, OnDestroy {
 
   saveFavorite(offerVersion: IOfferVersion, favorite: any): void {
       offerVersion.favorite = favorite;
+      if(favorite){
+        offerVersion.read = true;
+      }
       this.save(offerVersion);
   }
 

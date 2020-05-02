@@ -16,9 +16,7 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
-                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotInteresting.read">Read</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotInteresting.favorite">Favorite</span></th>
-                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotInteresting.available">Available</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotInteresting.image">Image</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotInteresting.description">Description</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotInteresting.offer">Offer</span></th>
@@ -28,14 +26,9 @@
             <tbody>
                 <tr *ngFor="let offerVersion of offerVersions ;trackBy: trackId">
                     <td><a [routerLink]="['/offer-version', offerVersion.id, 'view']">{{ offerVersion.id }}</a></td>
-                    <td>
-                        <input *ngIf="!offerVersion.read" type="checkbox" (click)="saveRead(offerVersion, $event.target.checked)"/>
-                        <input *ngIf="offerVersion.read" type="checkbox" checked (click)="saveRead(offerVersion, $event.target.checked)"/>
-                    </td>
                     <td><input *ngIf="!offerVersion.favorite" type="checkbox" (click)="saveFavorite(offerVersion, $event.target.checked)"/>
                         <input *ngIf="offerVersion.favorite" type="checkbox" checked (click)="saveFavorite(offerVersion, $event.target.checked)" /></td>
-                    <td><input *ngIf="!offerVersion.available" type="checkbox" disabled />
-                        <input *ngIf="offerVersion.available" type="checkbox" checked disabled/></td>
+
                     <td><div *ngFor="let image of offerVersion.images">
                     <img [src]="'data:' + image.imageContentType + ';base64,' + image.image" />
                 </div> </td>
