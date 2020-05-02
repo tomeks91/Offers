@@ -1,6 +1,5 @@
 package com.mycompany.myapp.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.*;
 import org.hibernate.annotations.Cache;
 
@@ -54,10 +53,6 @@ public class OfferVersion implements Serializable {
     @NotFound(action = NotFoundAction.IGNORE)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Image> images = new HashSet<>();
-
-    @ManyToOne
-    @JsonIgnoreProperties("versions")
-    private Offer offer;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -169,19 +164,6 @@ public class OfferVersion implements Serializable {
 
     public void setImages(Set<Image> images) {
         this.images = images;
-    }
-
-    public Offer getOffer() {
-        return offer;
-    }
-
-    public OfferVersion offer(Offer offer) {
-        this.offer = offer;
-        return this;
-    }
-
-    public void setOffer(Offer offer) {
-        this.offer = offer;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

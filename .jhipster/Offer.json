@@ -12,10 +12,12 @@
     ],
     "relationships": [
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "one-to-one",
             "otherEntityName": "offerVersion",
             "otherEntityRelationshipName": "offer",
-            "relationshipName": "versions"
+            "relationshipName": "versions",
+            "otherEntityField": "id",
+            "ownerSide": true
         }
     ],
     "changelogDate": "20200429161400",

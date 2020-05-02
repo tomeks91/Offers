@@ -7,8 +7,6 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * A Offer.
@@ -31,9 +29,9 @@ public class Offer implements Serializable {
     @Column(name = "unique_id")
     private String uniqueId;
 
-    @OneToMany(mappedBy = "offer")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<OfferVersion> versions = new HashSet<>();
+    @OneToOne
+    @JoinColumn(unique = true)
+    private OfferVersion versions;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -70,29 +68,17 @@ public class Offer implements Serializable {
         this.uniqueId = uniqueId;
     }
 
-    public Set<OfferVersion> getVersions() {
+    public OfferVersion getVersions() {
         return versions;
     }
 
-    public Offer versions(Set<OfferVersion> offerVersions) {
-        this.versions = offerVersions;
+    public Offer versions(OfferVersion offerVersion) {
+        this.versions = offerVersion;
         return this;
     }
 
-    public Offer addVersions(OfferVersion offerVersion) {
-        this.versions.add(offerVersion);
-        offerVersion.setOffer(this);
-        return this;
-    }
-
-    public Offer removeVersions(OfferVersion offerVersion) {
-        this.versions.remove(offerVersion);
-        offerVersion.setOffer(null);
-        return this;
-    }
-
-    public void setVersions(Set<OfferVersion> offerVersions) {
-        this.versions = offerVersions;
+    public void setVersions(OfferVersion offerVersion) {
+        this.versions = offerVersion;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -4,15 +4,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <!--
-        Added the constraints for entity OfferVersion.
+        Added the constraints for entity Offer.
     -->
-    <changeSet id="20200429161500-2" author="jhipster">
+    <changeSet id="20200429161400-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="offer_id"
-                                 baseTableName="offer_version"
-                                 constraintName="fk_offer_version_offer_id"
+        <addForeignKeyConstraint baseColumnNames="versions_id"
+                                 baseTableName="offer"
+                                 constraintName="fk_offer_versions_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="offer"/>
+                                 referencedTableName="offer_version"/>
 
     </changeSet>
 </databaseChangeLog>

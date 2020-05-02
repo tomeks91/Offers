@@ -34,13 +34,6 @@
             "otherEntityName": "image",
             "otherEntityRelationshipName": "offerVersion",
             "relationshipName": "images"
-        },
-        {
-            "relationshipType": "many-to-one",
-            "otherEntityName": "offer",
-            "otherEntityRelationshipName": "versions",
-            "relationshipName": "offer",
-            "otherEntityField": "id"
         }
     ],
     "changelogDate": "20200429161500",

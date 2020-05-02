@@ -9,14 +9,14 @@ entity OfferVersion {
     available Boolean,
     link String,
     detailsHtml TextBlob,
-    description TextBlob 
+    description TextBlob
 }
 
 entity Image {
 	image Blob
 }
 
-relationship OneToMany {
+relationship OneToOne {
 	Offer{versions} to OfferVersion
 }
 
