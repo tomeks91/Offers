@@ -20,7 +20,9 @@
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotRead.favorite">Favorite</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotRead.image">Image</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotRead.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotRead.detailsHtml">Details Html</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotRead.offer">Offer</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotRead.link">Link</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -35,14 +37,16 @@
                         <input *ngIf="offerVersion.favorite" type="checkbox" checked (click)="saveFavorite(offerVersion, $event.target.checked)" /></td>
 
                     <td><div *ngFor="let image of offerVersion.images">
-                    <img [src]="'data:' + image.imageContentType + ';base64,' + image.image" />
+                    <img style="max-width: 150px;" [src]="'data:' + image.imageContentType + ';base64,' + image.image" />
                 </div> </td>
                     <td [innerHtml]="offerVersion.description"></td>
+                    <td [innerHtml]="offerVersion.detailsHtml"></td>
                     <td>
                         <div *ngIf="offerVersion.offer">
                             {{ offerVersion.offer?.name }}
                         </div>
                     </td>
+                    <td><a href="{{offerVersion.link}}">{{offerVersion.link}}</a></td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

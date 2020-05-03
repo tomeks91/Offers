@@ -1,5 +1,6 @@
 package com.mycompany.myapp.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.*;
 import org.hibernate.annotations.Cache;
 
@@ -48,6 +49,10 @@ public class OfferVersion implements Serializable {
     @Type(type = "org.hibernate.type.TextType")
     @Column(name = "description")
     private String description;
+
+    @OneToOne(mappedBy = "versions")
+    @JsonIgnoreProperties("versions")
+    private Offer offer;
 
     @OneToMany(mappedBy = "offerVersion", fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
     @NotFound(action = NotFoundAction.IGNORE)
@@ -164,6 +169,19 @@ public class OfferVersion implements Serializable {
 
     public void setImages(Set<Image> images) {
         this.images = images;
+    }
+
+    public Offer getOffer() {
+        return offer;
+    }
+
+    public OfferVersion offer(Offer offer) {
+        this.offer = offer;
+        return this;
+    }
+
+    public void setOffer(Offer offer) {
+        this.offer = offer;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

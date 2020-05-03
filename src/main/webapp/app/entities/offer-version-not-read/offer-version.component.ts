@@ -64,6 +64,7 @@ export class OfferVersionComponent implements OnInit, OnDestroy {
   saveRead(offerVersion: IOfferVersion, read: any): void {
      offerVersion.read = read;
      this.save(offerVersion);
+     this.offerVersions = this.offerVersions?.filter(item => item !== offerVersion);
    }
 
   saveFavorite(offerVersion: IOfferVersion, favorite: any): void {
@@ -72,6 +73,7 @@ export class OfferVersionComponent implements OnInit, OnDestroy {
         offerVersion.read = true;
       }
       this.save(offerVersion);
+      this.offerVersions = this.offerVersions?.filter(item => item !== offerVersion);
   }
 
    saveAvailable(offerVersion: IOfferVersion, available: any): void {
@@ -93,8 +95,6 @@ export class OfferVersionComponent implements OnInit, OnDestroy {
       }
 
     protected onSaveSuccess(): void {
-        this.ngOnDestroy();
-        this.ngOnInit();
     }
 
     protected onSaveError(): void {

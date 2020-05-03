@@ -73,9 +73,10 @@ public class OfferVersionResource {
         if (offerVersion.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
+        offerVersion.getOffer().setVersions(offerVersion);
         OfferVersion result = offerVersionRepository.save(offerVersion);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, offerVersion.getId().toString()))
+            //.headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, offerVersion.getId().toString()))
             .body(result);
     }
 

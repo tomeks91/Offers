@@ -20,6 +20,7 @@
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.favorite">Favorite</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.image">Image</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.detailsHtml">Details Html</span></th>
                     <th scope="col" ><span jhiTranslate="firstJhippsterApp.offerVersionNotReadNotActive.offer">Offer</span></th>
                     <th scope="col"></th>
                 </tr>
@@ -38,6 +39,7 @@
                     <img [src]="'data:' + image.imageContentType + ';base64,' + image.image" />
                 </div> </td>
                     <td [innerHtml]="offerVersion.description"></td>
+                    <td [innerHtml]="offerVersion.detailsHtml"></td>
                     <td>
                         <div *ngIf="offerVersion.offer">
                             {{ offerVersion.offer?.name }}

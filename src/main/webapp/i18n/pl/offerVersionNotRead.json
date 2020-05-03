@@ -17,8 +17,8 @@
         "title": "Oferta nieprzeczytana"
       },
       "read": "Przeczytana",
-      "rejected": "Odrzucona",
-      "favorite": "Ulubiona",
+      "rejected": "Miss",
+      "favorite": "Like",
       "available": "Dostępna",
       "link": "Link",
       "detailsHtml": "Szczegóły",
