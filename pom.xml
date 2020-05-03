@@ -315,7 +315,7 @@
     </dependencies>
 
     <build>
-        <defaultGoal>spring-boot:start</defaultGoal>
+        <defaultGoal>spring-boot:run</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -629,7 +629,7 @@
                         <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                         <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                         <driver>org.postgresql.Driver</driver>
-                        <url>jdbc:postgresql://localhost:5432/firstJhippster</url>
+                        <url>jdbc:postgresql://localhost:5432/linkedin-offers</url>
                         <defaultSchemaName></defaultSchemaName>
                         <username>postgres</username>
                         <password>zk</password>

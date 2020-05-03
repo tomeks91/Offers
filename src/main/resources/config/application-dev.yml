@@ -37,7 +37,7 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/firstJhippster
+    url: jdbc:postgresql://localhost:5432/linkedin-offers
     username: postgres
     password: zk
     hikari:
