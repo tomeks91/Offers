@@ -315,7 +315,7 @@
     </dependencies>
 
     <build>
-        <defaultGoal>spring-boot:start</defaultGoal>
+        <defaultGoal>spring-boot:run</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
